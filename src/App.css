@@ -73,6 +73,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 631px;
 
 }
 
@@ -86,18 +87,6 @@ h1{
 
 
 @media screen and (max-width: 500px) {
-  .App-header{
-    position: relative;
-    top: 30px;
-    left: 50px;
-  }
-  h1{
-    left: 50%;
-    
-  }
-  #table{
-    display: block;
-    width: 100%;
-  }
+  
 
 }
