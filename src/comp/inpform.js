@@ -8,7 +8,7 @@ let ttoday = new Date().toISOString().slice(0, 10);
 console.log(ttoday);
 const InpForm = () => {
   const [form] = Form.useForm();
-  const onFinish = (values) => {
+  const onFinish = (values) => { //sending data to table module
 
     getData(values);
     document.getElementById('form').style.display = "none";
@@ -30,14 +30,8 @@ const InpForm = () => {
   }
   return (
     <>
-    <Button style={{
-      position: 'relative',
-      top : '20px',
-      left : '20px'
-        
-        
-    }} id='add-todo' type="primary" onClick={addtodo}>✚ Add New Todo</Button>
-    <div className="App-header">
+    <Button  id='add-todo' type="primary" onClick={addtodo}>✚ Add New Todo</Button>
+    
     
     <Form id="form" form={form}
       name="TO-DO Form"
@@ -115,7 +109,7 @@ const InpForm = () => {
         <Option value="Over Due">Over Due</Option>
         </Select>
       </Form.Item>
-
+      <div id="btns">
       <Form.Item
        >
         <Button id='add' type="primary" htmlType="submit">
@@ -128,8 +122,9 @@ const InpForm = () => {
           Cancel
         </Button>
       </Form.Item>
+      </div>
     </Form>
-    </div>
+
     </>
   );
 };

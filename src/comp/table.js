@@ -9,14 +9,14 @@ var data = []
 var count = 1
 var taglist = []
 var taggs = []
-export function getData(values){
-  var today = new Date();
-var tday = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()+' '+today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
-  var val = []
+export function getData(values){ //getting the data from the input section and initializing to add to the tables
+    var today = new Date();
+    var tday = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()+' '+today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
+    var val = []
   
-  val.key = count;
-  val.timestamp = tday;
-  val.title = values.title;
+    val.key = count;
+    val.timestamp = tday;
+    val.title = values.title;
     val.description = values.description;
     if(values.duedate !== undefined){
       val.duedate = values.duedate;
@@ -39,12 +39,10 @@ var tday = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()+' '+
     }else{
       val.tags = []
     }
-    
-     
-data = val
-count+=1
-console.log(data);
-addElement()
+  data = val
+  count+=1
+  console.log(data);
+  addElement()
 
 }
 
@@ -92,8 +90,7 @@ const EditableCell = ({
     </td>
   );
 };
-export default function ListTable(){
-  const [searchText, setSearchText] = useState("")
+export default function ListTable(){ // displying table function
   const [form] = Form.useForm();
   const [dataSource, setDataSource] = useState([])
   const [editingKey, setEditingKey] = useState('');
